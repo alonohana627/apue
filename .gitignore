@@ -1,0 +1,6 @@
+.idea
+
+/build/*
+!/build/.gitkeep
+
+cppcheck_results.txt
