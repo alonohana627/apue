@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
 
 typedef enum {
     SAFE_STRING_ARR_SUCCESS,
@@ -28,5 +29,10 @@ safe_string_arr_error_t safe_string_arr_remove(safe_string_arr_t *arr, size_t in
 const char *safe_string_arr_get(const safe_string_arr_t *arr, size_t index);
 
 safe_string_arr_error_t safe_string_arr_set(const safe_string_arr_t *arr, size_t index, const char *str);
+
+/*
+ * Splits args by spaces and returns them as string array
+ */
+safe_string_arr_t *split_by_space(char *args);
 
 #endif

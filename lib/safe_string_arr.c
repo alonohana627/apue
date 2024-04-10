@@ -1,5 +1,4 @@
 #include <safe_string_arr.h>
-#include <string.h>
 
 safe_string_arr_t *safe_string_arr_create(void) {
     size_t initial_capacity = 8;
