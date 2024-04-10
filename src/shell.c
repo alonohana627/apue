@@ -22,8 +22,8 @@ void run_shell(void) {
             return;
         } else if (pid == 0) { /* child */
             safe_string_arr_t *splited_args = split_by_space(buf);
-            execvp(splited_args->strings[0], splited_args->strings);
             printf("Couldn'st execute %s\n", buf);
+            execvp(splited_args->strings[0], splited_args->strings);
             return;
         }
 
