@@ -4,6 +4,7 @@
 #include <safe_string_arr.h>
 
 #define MAXLINE_SIZE 256
+#define PWD_SIZE 1024
 
 void run_shell(void);
 

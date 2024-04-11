@@ -1,7 +1,0 @@
-./src/dirstats.c
-./src/input_to_output.c
-./lib/safe_string_arr.c
-./include/stats.h
-./include/unix_io.h
-./include/io_stats.h
-./include/safe_string_arr.h

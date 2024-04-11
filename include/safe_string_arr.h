@@ -30,9 +30,10 @@ const char *safe_string_arr_get(const safe_string_arr_t *arr, size_t index);
 
 safe_string_arr_error_t safe_string_arr_set(const safe_string_arr_t *arr, size_t index, const char *str);
 
-/*
- * Splits args by spaces and returns them as string array
- */
+/* extras */
+safe_string_arr_t *split_by_char(char *args, char c);
+
 safe_string_arr_t *split_by_space(char *args);
+safe_string_arr_t *split_by_lines(char *args);
 
 #endif
