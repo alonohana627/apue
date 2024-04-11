@@ -1,15 +1,25 @@
 #include <apue_shell.h>
+
 #include <sys/wait.h>
 #include <unistd.h>
+
 #include <stdio.h>
 #include <string.h>
 
+static void sigint_cb(int);
+
 void run_shell(void) {
     char buf[MAXLINE_SIZE];
+    char pwd[PWD_SIZE];
     pid_t pid;
     int status;
 
-    printf("%% ");
+    if(signal(SIGINT, sigint_cb) == SIG_ERR){
+        printf("Could not register SIGINT to the shell\n");
+    }
+
+    getcwd(pwd, PWD_SIZE);
+    printf("%s: %% ", pwd);
 
     while (fgets(buf, MAXLINE_SIZE, stdin) != NULL) {
         if (buf[strnlen(buf, MAXLINE_SIZE) - 1] == '\n') {
@@ -32,6 +42,15 @@ void run_shell(void) {
             printf("WaitPID Error\n");
             return;
         }
-        printf("%% ");
+
+        getcwd(pwd, PWD_SIZE);
+        printf("%s: %% ", pwd);
     }
+}
+
+void sigint_cb(int signo) {
+    printf("\n=========================\n");
+    printf("Shut Down: %d\n", signo);
+    printf("=========================\n");
+    exit(0);
 }
