@@ -1,8 +1,8 @@
 #ifndef APUE_UNIX_IO_H
 #define APUE_UNIX_IO_H
 
-#include <unistd.h>
 #include <ioutils.h>
+#include <unistd.h>
 
 /*
  * UNIX version of file-to-file copy-and-write

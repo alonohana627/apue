@@ -25,3 +25,6 @@ all: $(EXE_FILES)
 $(BUILD_DIR)/%: $(EXAMPLES_DIR)/%.c
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
+clean:
+	rm -rf $(BUILD_DIR)/*.o
+	find $(BUILD_DIR) -maxdepth 1 -type f -executable -delete

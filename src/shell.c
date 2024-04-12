@@ -4,13 +4,14 @@
 #include <unistd.h>
 
 #include <stdio.h>
-#include <string.h>
 
 static void sigint_cb(int);
 
 void run_shell(void) {
     char buf[MAXLINE_SIZE];
     char pwd[PWD_SIZE];
+    char *buf2;
+
     pid_t pid;
     int status;
 
@@ -18,7 +19,7 @@ void run_shell(void) {
         printf("Could not register SIGINT to the shell\n");
     }
 
-    getcwd(pwd, PWD_SIZE);
+    buf2 = getcwd(pwd, PWD_SIZE);
     printf("%s: %% ", pwd);
 
     while (fgets(buf, MAXLINE_SIZE, stdin) != NULL) {
@@ -43,7 +44,7 @@ void run_shell(void) {
             return;
         }
 
-        getcwd(pwd, PWD_SIZE);
+        buf2 = getcwd(pwd, PWD_SIZE);
         printf("%s: %% ", pwd);
     }
 }

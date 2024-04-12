@@ -1,5 +1,5 @@
 # Compiler
-CC := clang
+CC := gcc
 
 # Directories
 SRC_DIR := src
@@ -8,7 +8,7 @@ INCLUDE_DIR := include
 BUILD_DIR := build
 
 # Flags
-CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR)
+CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR) -lc
 
 # Source files
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
@@ -30,7 +30,7 @@ $(STATIC_LIB): $(OBJ_FILES)
 	ar rcs $@ $^
 
 $(SHARED_LIB): $(OBJ_FILES)
-	$(CC) -shared -o $@ $^
+	$(CC) -fPIC -shared -o $@ $^
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -41,5 +41,9 @@ $(BUILD_DIR)/%.o: $(LIB_DIR)/%.c
 exmp:
 	make -C ./examples M='pwd'
 
+exmp-clean:
+	make -C ./examples M='pwd'
+
 clean:
 	rm -rf $(BUILD_DIR)/*.o $(STATIC_LIB) $(SHARED_LIB)
+	find $(BUILD_DIR) -maxdepth 1 -type f -executable -delete
