@@ -1,5 +1,5 @@
 # Compiler
-CC := gcc
+CC := clang
 
 # Directories
 SRC_DIR := src
@@ -8,7 +8,7 @@ INCLUDE_DIR := include
 BUILD_DIR := build
 
 # Flags
-CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR) -lc
+CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR)
 
 # Source files
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
@@ -30,7 +30,7 @@ $(STATIC_LIB): $(OBJ_FILES)
 	ar rcs $@ $^
 
 $(SHARED_LIB): $(OBJ_FILES)
-	$(CC) -fPIC -shared -o $@ $^
+	$(CC) -shared -o $@ $^
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@

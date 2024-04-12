@@ -10,7 +10,6 @@ static void sigint_cb(int);
 void run_shell(void) {
     char buf[MAXLINE_SIZE];
     char pwd[PWD_SIZE];
-    char *buf2;
 
     pid_t pid;
     int status;
@@ -19,7 +18,7 @@ void run_shell(void) {
         printf("Could not register SIGINT to the shell\n");
     }
 
-    buf2 = getcwd(pwd, PWD_SIZE);
+    getcwd(pwd, PWD_SIZE);
     printf("%s: %% ", pwd);
 
     while (fgets(buf, MAXLINE_SIZE, stdin) != NULL) {
@@ -44,7 +43,7 @@ void run_shell(void) {
             return;
         }
 
-        buf2 = getcwd(pwd, PWD_SIZE);
+        getcwd(pwd, PWD_SIZE);
         printf("%s: %% ", pwd);
     }
 }
