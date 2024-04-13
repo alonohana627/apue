@@ -18,4 +18,6 @@ int u_stdin_to_stdout(void);
 
 safe_string_arr_t* get_dir_and_file(char *buf);
 
+char *path_alloc(size_t *sizep);
+
 #endif
