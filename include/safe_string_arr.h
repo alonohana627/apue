@@ -34,6 +34,9 @@ safe_string_arr_error_t safe_string_arr_set(const safe_string_arr_t *arr, size_t
 safe_string_arr_t *split_by_char(char *args, char c);
 
 safe_string_arr_t *split_by_space(char *args);
+
 safe_string_arr_t *split_by_lines(char *args);
+
+safe_string_arr_t *match_regex(char *input, const char *pattern, size_t max_matches);
 
 #endif
