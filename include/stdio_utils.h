@@ -1,8 +1,8 @@
 #ifndef APUE_STDIO_UTILS_H
 #define APUE_STDIO_UTILS_H
 
-#include <ioutils.h>
 #include <stdio.h>
+#include <ioutils.h>
 /*
  * C Standard Library version of file-to-file copy-and-write
  * */

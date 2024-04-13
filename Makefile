@@ -5,10 +5,11 @@ CC := clang
 SRC_DIR := src
 LIB_DIR := lib
 INCLUDE_DIR := include
+#LINUX_HDR_DIR := /usr/src/linux-headers-6.5.0-27-generic/include
 BUILD_DIR := build
 
 # Flags
-CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR)
+CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR) #-I$(LINUX_HDR_DIR)
 
 # Source files
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
@@ -41,5 +42,9 @@ $(BUILD_DIR)/%.o: $(LIB_DIR)/%.c
 exmp:
 	make -C ./examples M='pwd'
 
+exmp-clean:
+	make -C ./examples M='pwd'
+
 clean:
 	rm -rf $(BUILD_DIR)/*.o $(STATIC_LIB) $(SHARED_LIB)
+	find $(BUILD_DIR) -maxdepth 1 -type f -executable -delete

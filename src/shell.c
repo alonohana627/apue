@@ -4,13 +4,13 @@
 #include <unistd.h>
 
 #include <stdio.h>
-#include <string.h>
 
 static void sigint_cb(int);
 
 void run_shell(void) {
     char buf[MAXLINE_SIZE];
     char pwd[PWD_SIZE];
+
     pid_t pid;
     int status;
 
