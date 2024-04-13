@@ -1,3 +1,6 @@
-//
-// Created by alon on 4/12/24.
-//
+#include <networking.h>
+#include <netdb.h>
+
+//char *get_host_ip(const char *url){
+//    return NULL;
+//}

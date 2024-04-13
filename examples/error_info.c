@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <sys/errno.h>
 #include <string.h>
 
-/* With Ubuntu 20.10 my machine has 133 error codes
+/*
+ * With Ubuntu 20.10 my machine has 133 error codes
  * 0 is not a valid error
  */
 int main(void) {

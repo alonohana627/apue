@@ -5,10 +5,11 @@ CC := clang
 SRC_DIR := src
 LIB_DIR := lib
 INCLUDE_DIR := include
+#LINUX_HDR_DIR := /usr/src/linux-headers-6.5.0-27-generic/include
 BUILD_DIR := build
 
 # Flags
-CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR)
+CFLAGS := -Wall -Wextra -O2 -Wpedantic -I$(INCLUDE_DIR) #-I$(LINUX_HDR_DIR)
 
 # Source files
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
