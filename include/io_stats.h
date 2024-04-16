@@ -3,10 +3,12 @@
 
 #include "safe_string_arr.h"
 
-void print_error(int err, char *path);
+void print_error(int err, const char *path);
 
-safe_string_arr_t *entries_in_folder(char *path);
+safe_string_arr_t *entries_in_folder(const char *path);
 
 int simple_print_entries_in_folder(char *path);
+
+void enhanced_ls(const char *path);
 
 #endif
