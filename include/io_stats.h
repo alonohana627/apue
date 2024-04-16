@@ -11,4 +11,6 @@ int simple_print_entries_in_folder(char *path);
 
 void enhanced_ls(const char *path);
 
+void full_file_info(const char *path);
+
 #endif

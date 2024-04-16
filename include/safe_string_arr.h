@@ -17,7 +17,7 @@ typedef struct {
     char **strings;
     size_t size;
     size_t capacity;
-} safe_string_arr_t;
+}   safe_string_arr_t;
 
 safe_string_arr_t *safe_string_arr_create(void);
 
