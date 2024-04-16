@@ -46,3 +46,16 @@ void enhanced_ls(const char *path) {
         printf("%s\t%s\t%ldB\n", curFile, _file_type(buf.st_mode), buf.st_size);
     }
 }
+
+void full_file_info(const char *path) {
+    struct stat buf;
+    if (stat(path, &buf) < 0) {
+        return;
+    }
+
+    printf("File Path: %s\n", path);
+    printf("Time of last access in ns: %ld\n", buf.st_atim.tv_nsec);
+    printf("Time of last modification in ns: %ld\n", buf.st_mtim.tv_nsec);
+    printf("Time of last status change in ns: %ld\n", buf.st_ctim.tv_nsec);
+    printf("Size in byes: %ld\n", buf.st_size);
+}
