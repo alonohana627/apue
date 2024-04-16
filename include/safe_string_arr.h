@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdbool.h>
 #include <string.h>
 
 typedef enum {
@@ -38,5 +39,7 @@ safe_string_arr_t *split_by_space(char *args);
 safe_string_arr_t *split_by_lines(char *args);
 
 safe_string_arr_t *match_regex(char *input, const char *pattern, size_t max_matches);
+
+bool is_match(const char *input, const char *pattern);
 
 #endif

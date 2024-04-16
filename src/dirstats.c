@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void print_error(int err, char *path) {
+void print_error(int err, const char *path) {
     switch (err) {
         case EACCES:
             printf("Error: Access Denied for %s\n", path);
@@ -30,7 +30,7 @@ void print_error(int err, char *path) {
     }
 }
 
-safe_string_arr_t *entries_in_folder(char *path) {
+safe_string_arr_t *entries_in_folder(const char *path) {
     DIR *dp;
     struct dirent *dirp;
     safe_string_arr_t *arr = safe_string_arr_create();
