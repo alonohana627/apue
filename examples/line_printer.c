@@ -1,5 +1,4 @@
 #include <unix_io.h>
-#include <safe_string_arr.h>
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {

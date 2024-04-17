@@ -1,5 +1,5 @@
 #include <stdio_utils.h>
 
-int main(){
+int main(void){
     std_stdin_to_stdout();
 }

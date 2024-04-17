@@ -1,15 +1,17 @@
+# Makefile example
 # Compiler
-CC := gcc
+CC := clang
 
 # Directories
-EXAMPLES_DIR := ../examples
-BUILD_DIR := ../build
-INCLUDE_DIR := ../include
-LIB_DIR := ../build
+EXAMPLES_DIR := ./examples
+BUILD_DIR := ./build
+INCLUDE_DIR := ./include
+LIB_DIR := ./build
 
 # Flags
 CFLAGS := -Wall -Wextra -I$(INCLUDE_DIR)
 LDFLAGS := -L$(LIB_DIR) -lapue
+
 # Add the library path to the linker flags
 LDFLAGS += -Wl,-rpath=$(abspath $(LIB_DIR))
 
@@ -20,11 +22,7 @@ SRC_FILES := $(wildcard $(EXAMPLES_DIR)/*.c)
 EXE_FILES := $(patsubst $(EXAMPLES_DIR)/%.c,$(BUILD_DIR)/%,$(SRC_FILES))
 
 # Targets
-all: $(EXE_FILES)
+exmp: $(EXE_FILES)
 
 $(BUILD_DIR)/%: $(EXAMPLES_DIR)/%.c
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
-
-clean:
-	rm -rf $(BUILD_DIR)/*.o
-	find $(BUILD_DIR) -maxdepth 1 -type f -executable -delete

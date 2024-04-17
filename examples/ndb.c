@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 
-int main() {
+int main(void) {
     struct addrinfo *res, *p;
     struct addrinfo hints = {};
     char ipstr[INET6_ADDRSTRLEN];
