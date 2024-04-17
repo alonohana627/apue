@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <ioutils.h>
 #include <safe_string_arr.h>
+
 /*
  * C Standard Library version of file-to-file copy-and-write
  * */

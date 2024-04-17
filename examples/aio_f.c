@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int main(){
+int main(void){
     async_io_t *aio = async_open("./a.txt", O_WRONLY | O_CREAT | O_TRUNC);
     const char *data = "This is a test data.";
 

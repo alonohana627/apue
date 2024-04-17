@@ -1,5 +1,5 @@
 #include <unix_io.h>
 
-int main(){
+int main(void){
     u_stdin_to_stdout();
 }

@@ -1,5 +1,5 @@
 #include <stats.h>
 
-int main(){
+int main(void){
     pretty_stats_print();
 }

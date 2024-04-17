@@ -1,8 +1,7 @@
-#define SFS_DEBUG
 #include <safe_string_arr.h>
 #include <stdio.h>
 
-int main(){
+int main(void){
     char *a = "b";
     char *b = "ohaaaaan";
     safe_string_arr_t* arr = safe_string_arr_create();

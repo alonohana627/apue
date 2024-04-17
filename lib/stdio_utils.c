@@ -5,8 +5,7 @@ int create_new_file(const char *path) {
     FILE *fp;
     int err;
 
-    fp = fopen(path, "w");
-    if (fp == NULL) {
+    if ((fp = fopen(path, "w")) == NULL) {
         err = errno;
         return err;
     }
